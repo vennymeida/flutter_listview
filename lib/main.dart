@@ -60,33 +60,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ],
               ),
             ),
-            Container(
-              margin: const EdgeInsets.all(3),
-              decoration: BoxDecoration(
-                border: Border.all(color: Colors.purple),
-              ),
-            ),
-            Image.network(
-                "https://akcdn.detik.net.id/community/media/visual/2022/08/29/barcelona.jpeg?w=700&q=90"),
-            Container(
-              alignment: Alignment.center,
-              margin: const EdgeInsets.all(7),
-              child: const Text(
-                'Costa Mendekat Ke Palmeiras',
-                style: TextStyle(fontSize: 20),
-              ),
-            ),
-            Container(
-              height: 50,
-              alignment: Alignment.centerLeft,
-              padding: const EdgeInsets.all(10),
-              color: Colors.purple,
-              child: const Text(
-                'Transfer',
-                style: TextStyle(fontSize: 15),
-              ),
-            ),
-            const ListBerita(),
+            const Trending(),
             const ListBerita(),
             const ListBerita(),
             const ListBerita(),
@@ -141,6 +115,56 @@ class ListBerita extends StatelessWidget {
             height: 35,
             alignment: Alignment.centerLeft,
             child: const Text('Barcelona Feb 13, 2021'),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class Trending extends StatelessWidget {
+  const Trending({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: const EdgeInsets.all(10),
+      decoration: BoxDecoration(border: Border.all(color: Colors.purple)),
+      child: Column(
+        children: <Widget>[
+          Container(
+            height: 200,
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                fit: BoxFit.fitWidth,
+                image: NetworkImage(
+                    "https://akcdn.detik.net.id/community/media/visual/2022/08/29/barcelona.jpeg?w=700&q=90"),
+              ),
+            ),
+          ),
+          Container(
+            padding: const EdgeInsets.all(10),
+            alignment: Alignment.topCenter,
+            child: const Text(
+              'Costa Mendekat Ke Palmeiras',
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+          Container(
+            padding: const EdgeInsets.all(10),
+            alignment: Alignment.centerLeft,
+            color: Colors.purpleAccent,
+            child: const Text(
+              'Transfer',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
+            ),
           ),
         ],
       ),
